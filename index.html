@@ -1,0 +1,67 @@
+const menuData = [
+    {
+        category: "🔥 भट्टीचे स्पेशल स्टार्टर्स (Chef's Live Tandoor & Non-Veg Starters)",
+        items: [
+            { id: "tan_full", name: "तंदुरी चिकन फुल / Tandoori Chicken (Full Portion - 4 Pcs)", price: 450 },
+            { id: "tan_half", name: "तंदुरी चिकन हाफ / Tandoori Chicken (Half Portion - 2 Pcs)", price: 240 },
+            { id: "m_fry", name: "स्पेशल मटण फ्राय प्लेट (४ पीस) / Mutton Fry Plate (4 Pcs)", price: 300 },
+            { id: "c_chilli", name: "चिकन चिली ड्राय / Chicken Chilli (8 Pcs)", price: 240 },
+            { id: "c_fry_7", name: "झटपट चिकन फ्राय प्लेट (७ पीस) / Budget Chicken Fry (7 Pcs)", price: 190 },
+            { id: "c_sukka", name: "चिकन सुक्का फ्राय / Chicken Sukka Fry", price: 220 },
+            { id: "c_pop", name: "क्रिस्पी चिकन पॉपकॉर्न / Chicken Popcorn Crispy Bites", price: 180 },
+            { id: "e_bhurji", name: "अंडा भुर्जी प्लेट (२ अंडी) / Egg Bhurji (2 Eggs)", price: 90 }
+        ]
+    },
+    {
+        category: "🥬 व्हेज स्टार्टर्स (High-Margin Vegetarian Starters)",
+        items: [
+            { id: "v_paneer_pep", name: "पनीर पेपर फ्राय / Paneer Pepper Fry", price: 240 },
+            { id: "v_paneer_fin", name: "कुरकुरीत पनीर फिंगर फ्राय / Crisp Paneer Finger Fry", price: 240 },
+            { id: "v_chana_garlic", name: "चणा लसूण फ्राय / Chana Garlic Fry", price: 120 },
+            { id: "v_k_bhajji", name: "कुरकुरीत खेकडा कांदा भजी / Kurkuri Khekda Kanda Bhajji", price: 90 }
+        ]
+    },
+    {
+        category: "🍛 कडक कोल्हापुरी थाळी आणि ग्रेव्ही (King Comfort Thalis & Gravies)",
+        items: [
+            { id: "t_mutton", name: "अस्सल मटण मसाला थाळी / Mutton Masala Thali", price: 360 },
+            { id: "t_chicken", name: "झणझणीत चिकन थाळी / Chicken Masala Thali", price: 300 },
+            { id: "t_punjabi", name: "स्पेशल पंजाबी व्हेज थाळी / Special Punjabi Veg Thali", price: 220 },
+            { id: "t_egg_thali", name: "अंड्याची स्पेशल थाळी / Egg Curry Thali", price: 200 },
+            { id: "c_curry_plate", name: "चिकन करी प्लेट (५ पीस) / Chicken Curry Plate (5 Pcs)", price: 250 },
+            { id: "e_curry_plate", name: "अंडा करी प्लेट (२ अंडी) / Egg Curry Plate (2 Eggs)", price: 150 }
+        ]
+    },
+    {
+        category: "🌾 बिर्याणी आणि फ्राईड राईस (Biryani & Rice Specials)",
+        items: [
+            { id: "r_m_biryani_f", name: "मटण बिर्याणी फुल / Mutton Biryani (Full Portion)", price: 450 },
+            { id: "r_m_biryani_h", name: "मटण बिर्याणी हाफ / Mutton Biryani (Half Portion)", price: 320 },
+            { id: "r_c_biryani_f", name: "चिकन दम बिर्याणी फुल / Chicken Dum Biryani (Full Portion)", price: 300 },
+            { id: "r_c_biryani_h", name: "चिकन दम बिर्याणी हाफ / Chicken Dum Biryani (Half Portion)", price: 200 },
+            { id: "r_c_fried_box", name: "चिकन फ्राईड राईस बॉक्स / Chicken Fried Rice Box", price: 200 },
+            { id: "r_e_fried_rice", name: "अंडा फ्राईड राईस / Egg Fried Rice", price: 150 },
+            { id: "r_jeera", name: "जिरा राईस प्लेट / Aromatic Jeera Rice Plate", price: 120 },
+            { id: "r_plain", name: "प्लेन राईस प्लेट / Plain Rice Plate (Full Dome)", price: 100 }
+        ]
+    },
+    {
+        category: "🫓 गरमागरम ब्रेड आणि भाकरी (Clay Oven Hot Roti & Staples)",
+        items: [
+            { id: "br_garlic_naan", name: "बटर गार्लिक नान / Butter Garlic Naan", price: 85 },
+            { id: "br_butter_naan", name: "स्पेशल बटर नान / Special Butter Naan", price: 50 },
+            { id: "br_butter_roti", name: "तंदुरी बटर रोटी / Tandoori Butter Roti", price: 35 },
+            { id: "br_butter_bhakri", name: "गरम बटर जवारी भाकरी / Hot Butter Jowar Bhakri", price: 35 }
+        ]
+    },
+    {
+        category: "🥤 थंडगार पेये आणि सोयीचे जेवण (Drinks & Comfort)",
+        items: [
+            { id: "d_curd", name: "प्रीमियम फ्रेश दही भात / Premium Curd Rice", price: 200 },
+            { id: "d_lassi", name: "घट्ट मॅंगो लस्सी / Premium Thick Mango Lassi", price: 80 },
+            { id: "d_sol", name: "ताजी थंडगार सोलकढी / Chilled Solkadhi", price: 40 },
+            { id: "d_taak", name: "मसाला ताक / Masala Buttermilk (Taak)", price: 35 },
+            { id: "d_water", name: "बिस्लेरी पाणी बॉटल (१ लिटर) / Bisleri Water Bottle (1L)", price: 20 }
+        ]
+    }
+];
