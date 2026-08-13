@@ -1,2 +1,108 @@
-# HOTEL-VIJAYRAJ-MENUE
-RESTAURANT MENUE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Vijayraj - Digital Menu</title>
+    <!-- Tailwind CSS for high-contrast alignment & premium colors -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- FontAwesome for clean user interface icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body class="bg-stone-900 text-stone-100 font-sans pb-32">
+
+    <!-- Top Premium Brand Header Banner -->
+    <header class="bg-gradient-to-b from-amber-950 via-stone-950 to-stone-900 text-center pt-8 pb-6 px-4 border-b border-amber-800/20 shadow-lg">
+        <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-3 py-1 rounded-full text-[10px] tracking-widest font-black uppercase">Gaganbawada Highway Special</span>
+        <h1 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 tracking-wide mt-2">HOTEL VIJAYRAJ</h1>
+        <p class="text-[11px] text-stone-400 tracking-widest font-bold mt-1 uppercase">Stay & Dine • Mukteshwar</p>
+        
+        <!-- Table Selector Box -->
+        <div class="mt-5 max-w-xs mx-auto bg-stone-900/90 border border-amber-600/30 rounded-xl p-3 shadow-inner">
+            <label class="block text-[10px] font-black text-amber-400/80 mb-1.5 uppercase tracking-wider"><i class="fas fa-chair mr-1"></i> Select Table / Order Type:</label>
+            <select id="tableNumber" class="w-full bg-stone-950 border border-stone-800 rounded-lg p-2.5 text-center text-amber-400 font-black text-sm focus:outline-none focus:border-amber-500 transition-all cursor-pointer">
+                <option value="Table 1">Table No. 1</option>
+                <option value="Table 2">Table No. 2</option>
+                <option value="Table 3">Table No. 3</option>
+                <option value="Table 4">Table No. 4</option>
+                <option value="Table 5">Table No. 5</option>
+                <option value="Table 6">Table No. 6</option>
+                <option value="Table 7">Table No. 7</option>
+                <option value="Table 8">Table No. 8</option>
+                <option value="Takeaway / Car Parcel">Takeaway / Car Parcel Box</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Menu Container -->
+    <main class="max-w-md mx-auto p-4 space-y-6" id="menu-container">
+        <!-- JavaScript loads categories and items here -->
+    </main>
+
+    <!-- Fixed Bottom Cart Checkout Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-stone-950/95 border-t border-amber-600/30 p-4 shadow-2xl backdrop-blur-md z-50 rounded-t-2xl">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="relative bg-stone-900 p-2.5 rounded-xl border border-stone-800">
+                    <i class="fas fa-shopping-basket text-amber-400 text-lg"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-amber-500 text-stone-950 font-black text-[11px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-stone-950 shadow">0</span>
+                </div>
+                <div>
+                    <p class="text-[10px] text-stone-400 font-bold uppercase tracking-wider">Total Payable</p>
+                    <p class="text-2xl font-black text-amber-400">₹<span id="cart-total">0</span></p>
+                </div>
+            </div>
+            <button onclick="sendWhatsAppOrder()" class="bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white font-black py-3.5 px-6 rounded-xl flex items-center gap-2 shadow-lg hover:shadow-green-500/20 transition-all active:scale-95 text-sm tracking-wide">
+                <i class="fab fa-whatsapp text-lg"></i> SEND ORDER
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_NUMBER = "918055730046"; 
+
+        const menuData = [
+            {
+                category: "🔥 भट्टीचे स्पेशल स्टार्टर्स (Live Tandoor & Non-Veg)",
+                items: [
+                    { id: "tan_full", name: "तंदुरी चिकन फुल / Tandoori Chicken (Full)", price: 450, img: "https://unsplash.com" },
+                    { id: "tan_half", name: "तंदुरी चिकन हाफ / Tandoori Chicken (Half)", price: 240, img: "https://unsplash.com" },
+                    { id: "m_fry", name: "स्पेशल मटण फ्राय प्लेट (४ पीस) / Mutton Fry Plate", price: 300, img: "https://unsplash.com" },
+                    { id: "c_chilli", name: "चिकन चिली ड्राय (८ पीस) / Chicken Chilli Dry", price: 240, img: "https://unsplash.com" },
+                    { id: "c_fry_7", name: "झटपट चिकन फ्राय प्लेट (७ पीस) / Budget Chicken Fry", price: 190, img: "https://unsplash.com" },
+                    { id: "c_sukka", name: "चिकन सुक्का फ्राय / Chicken Sukka Fry", price: 220, img: "https://unsplash.com" },
+                    { id: "c_pop", name: "क्रिस्पी चिकन पॉपकॉर्न / Chicken Popcorn Bites", price: 180, img: "https://unsplash.com" },
+                    { id: "e_bhurji", name: "अंडा भुर्जी प्लेट (२ अंडी) / Egg Bhurji Plate", price: 90, img: "https://unsplash.com" }
+                ]
+            },
+            {
+                category: "🥬 व्हेज स्टार्टर्स (High-Margin Veg Starters)",
+                items: [
+                    { id: "v_paneer_pep", name: "पनीर पेपर फ्राय / Paneer Pepper Fry", price: 240, img: "https://unsplash.com" },
+                    { id: "v_paneer_fin", name: "कुरकुरीत पनीर फिंगर फ्राय / Crisp Paneer Finger", price: 240, img: "https://unsplash.com" },
+                    { id: "v_chana_garlic", name: "चणा लसूण फ्राय / Chana Garlic Fry", price: 120, img: "https://unsplash.com" },
+                    { id: "v_k_bhajji", name: "कुरकुरीत खेकडा कांदा भजी / Kurkuri Kanda Bhajji", price: 90, img: "https://unsplash.com" }
+                ]
+            },
+            {
+                category: "🍛 कडक कोल्हापुरी थाळी आणि ग्रेव्ही (Thalis & Gravies)",
+                items: [
+                    { id: "t_mutton", name: "अस्सल मटण मसाला थाळी / Mutton Masala Thali", price: 360, img: "https://unsplash.com" },
+                    { id: "t_chicken", name: "झणझणीत चिकन थाळी / Chicken Masala Thali", price: 300, img: "https://unsplash.com" },
+                    { id: "t_punjabi", name: "स्पेशल पंजाबी व्हेज थाळी / Punjabi Veg Thali", price: 220, img: "https://unsplash.com" },
+                    { id: "t_egg_thali", name: "अंड्याची स्पेशल थाळी / Egg Curry Thali", price: 200, img: "https://unsplash.com" },
+                    { id: "c_curry_plate", name: "चिकन करी प्लेट (५ पीस) / Chicken Curry Plate", price: 250, img: "https://unsplash.com" },
+                    { id: "e_curry_plate", name: "अंडा करी प्लेट (२ अंडी) / Egg Curry Plate", price: 150, img: "https://unsplash.com" }
+                ]
+            },
+            {
+                category: "🌾 बिर्याणी आणि फ्राईड राईस (Biryani & Rice)",
+                items: [
+                    { id: "r_m_biryani_f", name: "मटण बिर्याणी फुल / Mutton Biryani (Full)", price: 450, img: "https://unsplash.com" },
+                    { id: "r_m_biryani_h", name: "मटण बिर्याणी हाफ / Mutton Biryani (Half)", price: 320, img: "https://unsplash.com" },
+                    { id: "r_c_biryani_f", name: "चिकन दम बिर्याणी फुल / Chicken Dum Biryani", price: 300, img: "https://unsplash.com" },
+                    { id: "r_c_biryani_h", name: "चिकन दम बिर्याणी हाफ / Chicken Dum Biryani", price: 200, img: "https://unsplash.com" },
+                    { id: "r_c_fried_box", name: "चिकन फ्राईड राईस बॉक्स / Chicken Fried Rice Box", price: 200, img: "https://unsplash.com" },
+                    { id: "r_e_fried_rice", name: "अंडा फ्राईड राईस / Egg Fried Rice Plate", price: 150, img: "https://unsplash.com" },
+                    { id: "r_jeera", name: "जिरा राईस प्लेट / Aromatic Jeera Rice Plate", price: 120, img: "https://unsplash.com" },
