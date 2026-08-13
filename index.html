@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Vijayraj - Digital Menu</title>
-    <!-- Premium Tailwind CSS Framework CDN Deployment -->
+    <!-- Tailwind CSS for high-contrast alignment & premium colors -->
     <script src="https://tailwindcss.com"></script>
-    <!-- Icon Repository Integration -->
+    <!-- FontAwesome for clean user interface icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body class="bg-stone-900 text-stone-100 font-sans pb-32">
@@ -34,9 +34,9 @@
         </div>
     </header>
 
-    <!-- Menu Sections Container -->
+    <!-- Main Dynamic Menu Container -->
     <main class="max-w-md mx-auto p-4 space-y-6" id="menu-container">
-        <!-- JavaScript will print all items inside here automatically -->
+        <!-- JavaScript loads categories and items here -->
     </main>
 
     <!-- Fixed Bottom Cart Checkout Bar -->
@@ -59,97 +59,49 @@
     </div>
 
     <script>
-        // Core Web Application JavaScript Logic Framework
         const WHATSAPP_NUMBER = "918055730046"; 
 
         const menuData = [
             {
-                category: "🔥 भट्टीचे स्पेशल स्टार्टर्स (Chef's Live Tandoor & Non-Veg)",
+                category: "🔥 भट्टीचे स्पेशल स्टार्टर्स (Live Tandoor & Non-Veg)",
                 items: [
-                    { id: "tan_full", name: "तंदुरी चिकन फुल / Tandoori Chicken (Full)", price: 450 },
-                    { id: "tan_half", name: "तंदुरी चिकन हाफ / Tandoori Chicken (Half)", price: 240 },
-                    { id: "m_fry", name: "स्पेशल मटण फ्राय प्लेट (४ पीस) / Mutton Fry Plate", price: 300 },
-                    { id: "c_chilli", name: "चिकन चिली ड्राय (८ पीस) / Chicken Chilli Dry", price: 240 },
-                    { id: "c_fry_7", name: "झटपट चिकन फ्राय प्लेट (७ पीस) / Budget Chicken Fry", price: 190 },
-                    { id: "c_sukka", name: "चिकन सुक्का फ्राय / Chicken Sukka Fry", price: 220 },
-                    { id: "c_pop", name: "क्रिस्पी चिकन पॉपकॉर्न / Chicken Popcorn Bites", price: 180 },
-                    { id: "e_bhurji", name: "अंडा भुर्जी प्लेट (२ अंडी) / Egg Bhurji Plate", price: 90 }
+                    { id: "tan_full", name: "तंदुरी चिकन फुल / Tandoori Chicken (Full)", price: 450, img: "https://unsplash.com" },
+                    { id: "tan_half", name: "तंदुरी चिकन हाफ / Tandoori Chicken (Half)", price: 240, img: "https://unsplash.com" },
+                    { id: "m_fry", name: "स्पेशल मटण फ्राय प्लेट (४ पीस) / Mutton Fry Plate", price: 300, img: "https://unsplash.com" },
+                    { id: "c_chilli", name: "चिकन चिली ड्राय (८ पीस) / Chicken Chilli Dry", price: 240, img: "https://unsplash.com" },
+                    { id: "c_fry_7", name: "झटपट चिकन फ्राय प्लेट (७ पीस) / Budget Chicken Fry", price: 190, img: "https://unsplash.com" },
+                    { id: "c_sukka", name: "चिकन सुक्का फ्राय / Chicken Sukka Fry", price: 220, img: "https://unsplash.com" },
+                    { id: "c_pop", name: "क्रिस्पी चिकन पॉपकॉर्न / Chicken Popcorn Bites", price: 180, img: "https://unsplash.com" },
+                    { id: "e_bhurji", name: "अंडा भुर्जी प्लेट (२ अंडी) / Egg Bhurji Plate", price: 90, img: "https://unsplash.com" }
                 ]
             },
             {
-                category: "🥬 व्हेज स्टार्टर्स (High-Margin Vegetarian Starters)",
+                category: "🥬 व्हेज स्टार्टर्स (High-Margin Veg Starters)",
                 items: [
-                    { id: "v_paneer_pep", name: "पनीर पेपर फ्राय / Paneer Pepper Fry", price: 240 },
-                    { id: "v_paneer_fin", name: "कुरकुरीत पनीर फिंगर फ्राय / Crisp Paneer Finger Fry", price: 240 },
-                    { id: "v_chana_garlic", name: "चणा लसूण फ्राय / Chana Garlic Fry", price: 120 },
-                    { id: "v_k_bhajji", name: "कुरकुरीत खेकडा कांदा भजी / Kurkuri Kanda Bhajji", price: 90 }
+                    { id: "v_paneer_pep", name: "पनीर पेपर फ्राय / Paneer Pepper Fry", price: 240, img: "https://unsplash.com" },
+                    { id: "v_paneer_fin", name: "कुरकुरीत पनीर फिंगर फ्राय / Crisp Paneer Finger", price: 240, img: "https://unsplash.com" },
+                    { id: "v_chana_garlic", name: "चणा लसूण फ्राय / Chana Garlic Fry", price: 120, img: "https://unsplash.com" },
+                    { id: "v_k_bhajji", name: "कुरकुरीत खेकडा कांदा भजी / Kurkuri Kanda Bhajji", price: 90, img: "https://unsplash.com" }
                 ]
             },
             {
-                category: "🍛 कडक कोल्हापुरी थाळी आणि ग्रेव्ही (King Thalis & Gravies)",
+                category: "🍛 कडक कोल्हापुरी थाळी आणि ग्रेव्ही (Thalis & Gravies)",
                 items: [
-                    { id: "t_mutton", name: "अस्सल मटण मसाला थाळी / Mutton Masala Thali", price: 360 },
-                    { id: "t_chicken", name: "झणझणीत चिकन थाळी / Chicken Masala Thali", price: 300 },
-                    { id: "t_punjabi", name: "स्पेशल पंजाबी व्हेज थाळी / Punjabi Veg Thali", price: 220 },
-                    { id: "t_egg_thali", name: "अंड्याची स्पेशल थाळी / Egg Curry Thali", price: 200 },
-                    { id: "c_curry_plate", name: "चिकन करी प्लेट (५ पीस) / Chicken Curry Plate", price: 250 },
-                    { id: "e_curry_plate", name: "अंडा करी प्लेट (२ अंडी) / Egg Curry Plate", price: 150 }
+                    { id: "t_mutton", name: "अस्सल मटण मसाला थाळी / Mutton Masala Thali", price: 360, img: "https://unsplash.com" },
+                    { id: "t_chicken", name: "झणझणीत चिकन थाळी / Chicken Masala Thali", price: 300, img: "https://unsplash.com" },
+                    { id: "t_punjabi", name: "स्पेशल पंजाबी व्हेज थाळी / Punjabi Veg Thali", price: 220, img: "https://unsplash.com" },
+                    { id: "t_egg_thali", name: "अंड्याची स्पेशल थाळी / Egg Curry Thali", price: 200, img: "https://unsplash.com" },
+                    { id: "c_curry_plate", name: "चिकन करी प्लेट (५ पीस) / Chicken Curry Plate", price: 250, img: "https://unsplash.com" },
+                    { id: "e_curry_plate", name: "अंडा करी प्लेट (२ अंडी) / Egg Curry Plate", price: 150, img: "https://unsplash.com" }
                 ]
             },
             {
-                category: "🌾 बिर्याणी आणि फ्राईड राईस (Biryani & Rice Specials)",
+                category: "🌾 बिर्याणी आणि फ्राईड राईस (Biryani & Rice)",
                 items: [
-                    { id: "r_m_biryani_f", name: "मटण बिर्याणी फुल / Mutton Biryani (Full)", price: 450 },
-                    { id: "r_m_biryani_h", name: "मटण बिर्याणी हाफ / Mutton Biryani (Half)", price: 320 },
-                    { id: "r_c_biryani_f", name: "चिकन दम बिर्याणी फुल / Chicken Dum Biryani", price: 300 },
-                    { id: "r_c_biryani_h", name: "चिकन दम बिर्याणी हाफ / Chicken Dum Biryani", price: 200 },
-                    { id: "r_c_fried_box", name: "चिकन फ्राईड राईस बॉक्स / Chicken Fried Rice Box", price: 200 },
-                    { id: "r_e_fried_rice", name: "अंडा फ्राईड राईस / Egg Fried Rice Plate", price: 150 },
-                    { id: "r_jeera", name: "जिरा राईस प्लेट / Aromatic Jeera Rice Plate", price: 120 },
-                    { id: "r_plain", name: "प्लेन राईस प्लेट / Plain Rice Plate (Full Dome)", price: 100 }
-                ]
-            },
-            {
-                category: "🫓 गरमागरम ब्रेड आणि भाकरी (Clay Oven Hot Staples)",
-                items: [
-                    { id: "br_garlic_naan", name: "बटर गार्लिक नान / Butter Garlic Naan", price: 85 },
-                    { id: "br_butter_naan", name: "स्पेशल बटर नान / Special Butter Naan", price: 50 },
-                    { id: "br_butter_roti", name: "तंदुरी बटर रोटी / Tandoori Butter Roti", price: 35 },
-                    { id: "br_butter_bhakri", name: "गरम बटर जवारी भाकरी / Hot Butter Jowar Bhakri", price: 35 }
-                ]
-            },
-            {
-                category: "🥤 थंडगार पेये आणि सोयीचे जेवण (Drinks & Comfort)",
-                items: [
-                    { id: "d_curd", name: "प्रीमियम फ्रेश दही भात / Premium Curd Rice", price: 200 },
-                    { id: "d_lassi", name: "घट्ट मॅंगो लस्सी / Premium Thick Mango Lassi", price: 80 },
-                    { id: "d_sol", name: "ताजी थंडगार सोलकढी / Chilled Solkadhi", price: 40 },
-                    { id: "d_taak", name: "मसाला ताक / Masala Buttermilk (Taak)", price: 35 },
-                    { id: "d_water", name: "बिस्लेरी पाणी बॉटल (१ लिटर) / Bisleri Water Bottle", price: 20 }
-                ]
-            }
-        ];
-
-        let cart = {};
-
-        function renderMenu() {
-            const container = document.getElementById('menu-container');
-            if (!container) return;
-            
-            let htmlContent = "";
-            
-            for (let i = 0; i < menuData.length; i++) {
-                let section = menuData[i];
-                let itemsHtml = "";
-                
-                for (let j = 0; j < section.items.length; j++) {
-                    let item = section.items[j];
-                    let currentQty = cart[item.id] ? cart[item.id].qty : 0;
-                    
-                    itemsHtml += `
-                        <div class="bg-stone-950 border border-stone-850 p-3.5 rounded-xl flex items-center justify-between gap-4">
-                            <div class="flex-1">
-                                <h4 class="font-bold text-stone-100 text-sm tracking-wide leading-tight">${item.name}</h4>
-                                <p class="text-amber-400 font-extrabold text-sm mt-1">₹${item.price}</p>
-                            </div>
-                            <div class="flex items-center gap-2 bg-stone-900 p-1 rounded-xl border border-stone-800">
+                    { id: "r_m_biryani_f", name: "मटण बिर्याणी फुल / Mutton Biryani (Full)", price: 450, img: "https://unsplash.com" },
+                    { id: "r_m_biryani_h", name: "मटण बिर्याणी हाफ / Mutton Biryani (Half)", price: 320, img: "https://unsplash.com" },
+                    { id: "r_c_biryani_f", name: "चिकन दम बिर्याणी फुल / Chicken Dum Biryani", price: 300, img: "https://unsplash.com" },
+                    { id: "r_c_biryani_h", name: "चिकन दम बिर्याणी हाफ / Chicken Dum Biryani", price: 200, img: "https://unsplash.com" },
+                    { id: "r_c_fried_box", name: "चिकन फ्राईड राईस बॉक्स / Chicken Fried Rice Box", price: 200, img: "https://unsplash.com" },
+                    { id: "r_e_fried_rice", name: "अंडा फ्राईड राईस / Egg Fried Rice Plate", price: 150, img: "https://unsplash.com" },
+                    { id: "r_jeera", name: "जिरा राईस प्लेट / Aromatic Jeera Rice Plate", price: 120, img: "https://unsplash.com" },
